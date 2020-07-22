@@ -1,6 +1,6 @@
 'use strict';
 
-// Функции высшего порядка
+// // Функции высшего порядка - означает что мы в переменную можем записать функцию
 // const smilyFace = function() {
 //   console.log('😄'.repeat(8));
 // }
@@ -8,7 +8,9 @@
 // const starFace = function() {
 //   console.log('🤩'.repeat(8));
 // }
-
+//
+// // вместо callBack может быть любое другое название - это название параметра функции
+// // важно понимать, что callBack должен быть функцией
 // const introduceMyselfWithEmotion = function(name, callBack) {
 //   console.log(`🔮 My name is ${name} 🔮`);
 
@@ -19,7 +21,7 @@
 
 // introduceMyselfWithEmotion('John', smilyFace);
 // introduceMyselfWithEmotion('John', starFace);
-// introduceMyselfWithEmotion('John', 55555);
+// introduceMyselfWithEmotion('John', 55555); // 5555 - не функция соответственно 
 
 const animals = [
   { icon: '😺', name: 'cat' },
@@ -28,6 +30,7 @@ const animals = [
   { icon: '🦊', name: 'fox' },
 ];
 
+// простая функция которая показывает в консоли каждый элемент массива
 const logger = (array) => {
   for (let item of array) {
     console.log(item);
@@ -35,7 +38,8 @@ const logger = (array) => {
 }
 
 // logger(animals);
-
+// функция которая проходит по каждому элементу массива
+// и на кажой итерации вызывает функцию callback
 const findInArray = (array, callback) => {
   for (let item of array) {
     if (typeof callback !== 'function') {
@@ -58,18 +62,10 @@ const findFoxByIcon = (animal) => {
   return icon === '🦊';
 }
 
-// не надо так делать
+// не надо так делать. При помощи колбеков избавится от копипаста
 // const findFoxByIcon = (array) => {
 //   for (let item of array) {
 //     if(item.icon === '🦊') {
-//       return item;
-//     }
-//   }
-// }
-
-// const findFoxByName = (array) => {
-//   for (let item of array) {
-//     if(item.name === 'fox') {
 //       return item;
 //     }
 //   }
@@ -80,6 +76,7 @@ const findFoxByIcon = (animal) => {
 
 // const bar = findInArray(animals, findFoxByIcon);
 
+/* Замыкания */
 const bar = () => {
   let foo = 0;
   return function() {
@@ -88,17 +85,18 @@ const bar = () => {
 }
 
 // const fooz = bar();
+// // как это выглядит после вызова bar(), но ссылка на переменную foo остается
+// // const fooz = function() {
+// //   console.log(foo += 1);
+// // }
 // fooz();
 // fooz();
 // fooz();
 // fooz();
 // fooz();
-// fooz();
-// как это выглядит после вызова bar()
-// const logger = function() {
-//   console.log(foo += 1);
-// }
-const add = (a, b = undefined) => {
+
+// Пример использования замыканий, для написания функции add
+const add = (a, b) => {
   if(b !== undefined) {
     return a + b;
   }
@@ -111,6 +109,8 @@ const add = (a, b = undefined) => {
 console.log(add(1, ''));
 console.log(add(1, 2));
 console.log(add(1)(2));
+
+/* Функция подсчета объема с использованием карирования и замыканий */
 
 // без замыканий
 // const calcObj = function(w, h, l) {
@@ -132,10 +132,5 @@ const objWithWidthAndHeight = objWithWidth(15);
 console.log(objWithWidth(15)(20));
 console.log(objWithWidthAndHeight(20));
 console.log(calcObj(1)(3)(5));
-
-console.log(kyoo);
-
-
-
 
 
