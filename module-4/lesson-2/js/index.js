@@ -170,21 +170,23 @@ const battleship = {
       console.log('Промах');
 
       this.layout[x][y] = '💥';
-    } else if (item === '⛵') {
+    }
+    
+    if (item === '⛵') {
       console.log('Убил!!!');
 
       this.numberOfShips -= 1;
       this.layout[x][y] = '☠';
-    } else {
-      console.log('Ты сюда сюда уже стрелял');
+      return
     }
 
-    this.logger();
+    console.log('Ты сюда уже стрелял');
   },
 
   battle() {
     while (this.numberOfShips !== 0) {
-      this.userFire()
+      this.userFire();
+      this.logger();
     }
     this.greetUser();
   },
