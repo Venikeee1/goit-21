@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" >
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">FP</div>
+        </div>
+    </header>
+    <main class="main" type="main">
+        <div class="container">
+            <h1 class="title">Todo list</h1>
+            <ul id="list" class="list">
+            </ul>
+            <form class="actions">
+                <div class="input-wrapper">
+                    <label class="input-label" for="input1">
+                        Enter to do list
+                    </label>
+                    <input id="input1" name="text" class="input" type="text">
+                </div>
+                <div class="actions__btns">
+                    <button class="btn btn--success" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script type="module" src="./js/index.js"></script>
+</body>
+</html>
