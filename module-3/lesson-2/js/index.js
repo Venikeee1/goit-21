@@ -61,7 +61,7 @@ const mortalCombatCharacters = [
     name: 'Raiden',
     damage: 100,
     health: 550,
-    icon: '👦',
+    icon: '👨‍🦳',
     missChance: 0.15
   },
   {
@@ -70,6 +70,13 @@ const mortalCombatCharacters = [
     health: 520,
     icon: '👩‍🦳',
     missChance: 0.25
+  },
+  {
+    name: 'Subzero',
+    damage: 100,
+    health: 540,
+    icon: '🥶',
+    missChance: 0.15
   },
 ]
 
