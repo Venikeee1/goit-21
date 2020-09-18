@@ -1,5 +1,8 @@
 <div class="favorite-video">
   <h2 class="favorite-video__title">{{ this.title }}</h2>
   <iframe class="favorite-video__inner" src="{{ this.iframeLink }}" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
-  <button data-id="{{ this.id }}">delete</button>
+  <div class="favorite-video__actions">
+    <button class="delete-video btn btn--alert" type="button" data-id="{{ this.id }}">delete</button>
+    <button class="edit-video btn" type="button" data-id="{{ this.id }}">edit</button>
+  </div>
 </div>

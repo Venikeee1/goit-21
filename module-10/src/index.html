@@ -47,6 +47,9 @@
         </div>
       </div>
     </header>
+
+    <button data-micromodal-trigger="modal-1">Click me</button>
+
     <main class="main">
       <div class="container">
         <h1 class="title">Favorite videos</h1>
@@ -58,5 +61,22 @@
         <section class="favorite-video-list"></section>
       </div>
     </main>
+    <!-- Modal -->
+    <div class="modal" id="modal-1" aria-hidden="true">
+      <div class="modal__inner" tabindex="-1" data-micromodal-close>
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-1-title" >
+          <h2 class="modal__title">Edit your item</h2>
+          <form class="edit-form">
+            <div class="input-wrapper">
+              <input name="title" type="text" placeholder="Title" class="input">
+            </div>
+            <div class="input-wrapper">
+              <input name="iframe-link" type="text" placeholder="Youtube link" class="input">
+            </div>
+            <button class="btn btn__success" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

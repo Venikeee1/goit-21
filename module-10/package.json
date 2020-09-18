@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "micromodal": "^0.4.6"
   }
 }

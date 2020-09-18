@@ -1,27 +1,13 @@
 import './styles.scss';
-import favoriteVideoCardView from './templates/favorite-video.hbs';
-import localStorageApi from './scripts/localStorageApi';
-import videoListView from './templates/video-list.hbs';
+import MicroModal from 'micromodal';
+import VideoList from './scripts/VideoList';
 
-const localStorageKeys = {
-  videoList: 'videoList'
-}
+const videoList = new VideoList('.favorite-video-list');
+videoList.render();
 
-const videoListContainer = document.querySelector('.favorite-video-list');
+MicroModal.init();
+
 const videoForm = document.querySelector('.favorite-video-form');
-
-// ф-ция добавления любимого видео
-const addFavoriteVideo = video => {
-  const videoList = localStorageApi.get(localStorageKeys.videoList);
-  addFavoriteVideoItemToView(video);
-
-  if(!videoList) {
-    localStorageApi.set(localStorageKeys.videoList, [video]);
-    return;
-  }
-
-  localStorageApi.set(localStorageKeys.videoList, [video, ...videoList])
-}
 
 // хендлер для сабмита формы
 const handleSubmit = event => {
@@ -31,28 +17,19 @@ const handleSubmit = event => {
   // используем формдату для обработки сабмита
   const formData = new FormData(currentTarget);
 
-  addFavoriteVideo({
+  videoList.addItem({
     id: Date.now(),
     title: formData.get('title'),
     iframeLink: formData.get('iframe-link')
   })
 }
 
-// ф-ция отрисовки начального списка
-const renderVideoList = () => {
-  const videoList = localStorageApi.get(localStorageKeys.videoList);
+const handleEditFavoriteVideo = event => {
+  const { target } = event;
 
-  if(!videoList) return;
+  if(!target.classList.contains('edit-video')) return;
 
-  videoListContainer.innerHTML = videoListView(videoList);
-}
-
-// ф-ция отрисовки добавленного элемента
-const addFavoriteVideoItemToView = video => {
-  const videoView = favoriteVideoCardView(video);
-  videoListContainer.insertAdjacentHTML('afterbegin', videoView)
+  MicroModal.show('modal-1');
 }
 
 videoForm.addEventListener('submit', handleSubmit);
-
-renderVideoList();

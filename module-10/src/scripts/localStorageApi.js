@@ -6,3 +6,7 @@ export default {
     localStorage.setItem(key, JSON.stringify(value));
   }
 }
+
+export const localStorageKeys = {
+  videoList: 'videoList'
+}
