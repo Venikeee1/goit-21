@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Youtube library</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="/" class="logo">
+            <img src="/images/logo.png">
+          </a>
+          <div class="header__user-icon">
+            <span>&#127952;</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <h1 class="title">Heroes</h1>
+        <div class="heroes"></div>
+      </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal" id="modal-1" aria-hidden="true">
+      <div class="modal__inner" tabindex="-1" data-micromodal-close>
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-1-title" >
+          <h2 class="modal__title">Edit your item</h2>
+          <form class="edit-form">
+            <div class="input-wrapper">
+              <input name="title" type="text" placeholder="Title" class="input">
+            </div>
+            <div class="input-wrapper">
+              <input name="iframe-link" type="text" placeholder="Youtube link" class="input">
+            </div>
+            <button class="btn btn__success" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
