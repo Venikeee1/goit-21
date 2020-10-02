@@ -1,0 +1,11 @@
+<section class="nav-bar">
+  {{#each this}}
+    <div class="nav-bar__item">
+      <div class="nav-bar__avatar">
+        <img src="{{ avatar }}" alt="">
+      </div>
+      <div class="nav-bar__name">Nickname: {{ personaname }}</div>
+      <div class="nav-bar__score">Rating: {{ score }}</div>
+    </div>
+  {{/each}}
+</section>

@@ -1,0 +1,53 @@
+.hero-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero-item {
+  position: relative;
+  width: 10%;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(#000, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+
+    .hero-item__title {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  &__title {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0 0.5em;
+    opacity: 0;
+    transition: opacity 0.4s;
+    color: #fff;
+    text-align: center;
+  }
+}
