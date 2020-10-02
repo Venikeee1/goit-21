@@ -1,12 +1,13 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const path = require('path');
 const paths = require('../utils/paths');
 
 module.exports = env => ({
   mode: env.mode,
   context: paths.SRC_DIR,
-  entry: './index.js',
+  entry: path.resolve(__dirname, '../../src', 'index.js'),
   output: {
     path: paths.BUILD_DIR,
   },

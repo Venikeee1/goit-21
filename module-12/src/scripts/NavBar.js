@@ -23,7 +23,6 @@ export default class NavBar {
 
   handleClickOutside(event) {
     const { target } = event;
-    console.log(target.closest(this.selector));
 
     if(target.closest(this.selector)) return
 

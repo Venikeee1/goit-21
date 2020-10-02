@@ -7,8 +7,5 @@ export const fetchUserById = (id) => {
 }
 
 export const fetchUsersListByHeroName = (heroId) => {
-  return fetch(`${API_URL}/rankings?hero_id=${heroId}`).then(res => {
-    console.log(res);
-    return res.json()
-  });
+  return fetch(`${API_URL}/rankings?hero_id=${heroId}`).then(res => res.json());
 }

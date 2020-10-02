@@ -26,7 +26,7 @@ module.exports = env => ({
   devServer: {
     contentBase: paths.BUILD_DIR,
     publicPath: '',
-    historyApiFallback: true,
+    historyApiFallback: {index: '/'},
     compress: true,
     port: 4040,
     noInfo: true,
