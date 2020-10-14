@@ -1,0 +1,19 @@
+.message {
+  max-width: 70%;
+  margin-bottom: 20px;
+
+  &__inner {
+    display: inline-block;
+    background: purple;
+    padding: 10px;
+    color: #fff;
+    border-radius: 6px;
+    border-bottom-left-radius: 0;
+  }
+
+  &__time {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}

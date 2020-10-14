@@ -18,6 +18,7 @@ const handleHeroClick = event => {
 
   if (closest) {
     const { id } = closest.dataset;
+    window.history.pushState(null, `hero ${id}`, `/user/${id}`)
 
     fetchUsersListByHeroName(id).then(({ rankings }) => {
       navBar.open(rankings.slice(0, 20))
@@ -75,14 +76,14 @@ const router = createRouter()
 */
 
 // Спрашивает подтверждение перед уходом со страницы
-window.onbeforeunload = function (e) {
-  e = e || window.event;
+// window.onbeforeunload = function (e) {
+//   e = e || window.event;
 
-  // For IE and Firefox prior to version 4
-  if (e) {
-      e.returnValue = 'Sure?';
-  }
+//   // For IE and Firefox prior to version 4
+//   if (e) {
+//       e.returnValue = 'Sure?';
+//   }
 
-  // For Safari
-  return 'Sure?';
-};
+//   // For Safari
+//   return 'Sure?';
+// };
